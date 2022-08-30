@@ -13,7 +13,7 @@
 2. Clone this repository
 
    ```sh
-   https://github.com/TINF19AI/AR_Sustainability
+   git clone https://github.com/TINF19AI/AR_Sustainability.git
    ```
 
 3. Download Vuforia Engine 10.9 on [the Vuforia Downloads page](https://developer.vuforia.com/downloads/sdk)

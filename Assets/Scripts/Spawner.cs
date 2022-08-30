@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour
 {
-    public Rigidbody projectile;
+    public GameObject projectile;
     public float speed = -6;
     public int maxInstances = 4096;
     public int instances = 0;
@@ -33,9 +33,9 @@ public class Spawner : MonoBehaviour
     }
 
     void spawn(){
-        Rigidbody p = Instantiate(projectile, transform.position, transform.rotation);
+        GameObject p = Instantiate(projectile, transform.position, transform.rotation);
         p.transform.parent = gameObject.transform;
-        p.velocity = transform.up * speed;
+        p.GetComponent<Rigidbody>().velocity = transform.up * speed;
         instances++;
 
         StartCoroutine(DisablePhysics(p, 1f));
@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
 
 
 
-    IEnumerator DisablePhysics(Rigidbody p, float delayTime)
+    IEnumerator DisablePhysics(GameObject p, float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
         p.GetComponent<Rigidbody>().isKinematic = true;

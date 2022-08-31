@@ -406,10 +406,10 @@ MonoBehaviour:
   update: 0
   cupWidth: 3
   cupHeight: 5
-  amount: 3
-  amountPlaced: 0
-  gridX: 10
-  gridY: 10
+  amount: 5
+  placeDelay: 0.05
+  gridX: 40
+  gridY: 40
 --- !u!1 &1375480522
 GameObject:
   m_ObjectHideFlags: 0

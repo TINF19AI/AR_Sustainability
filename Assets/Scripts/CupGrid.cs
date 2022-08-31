@@ -11,7 +11,8 @@ public class CupGrid : MonoBehaviour
 	public int cupHeight = 2;
 
 	public int amount = 3;
-	public int amountPlaced = 0;
+	public float placeDelay = 0.05f;
+	private int amountPlaced = 0;
 
 	public int gridX = 10;
 	public int gridY = 10;
@@ -22,10 +23,10 @@ public class CupGrid : MonoBehaviour
 // slider beschreibt anzahl der Becher
 
 	void Start(){
-		Spawn();
+		StartCoroutine(Spawn());
 	}
 
-	void Spawn()
+	IEnumerator Spawn()
 	{
 		if(amount < amountPlaced){
 			// remove
@@ -37,17 +38,22 @@ public class CupGrid : MonoBehaviour
 		}else{
 			// add
 			for (int i = amountPlaced; i < amount; i++){
+				if(i % 100 == 0){
+					yield return new WaitForSeconds(placeDelay);
+				}
+
 				Instantiate(i % gridX, (int)Mathf.Floor(i / (gridX * gridY)), (int)Mathf.Floor( (i % (gridX * gridY)) / gridY));
 			}
 		}
 
 		amountPlaced = amount;
+		yield return null;
 	}
 
 	void Update(){
 		if (update){
 			update = false;
-			Spawn();
+			StartCoroutine(Spawn());
 		}
 	}
 

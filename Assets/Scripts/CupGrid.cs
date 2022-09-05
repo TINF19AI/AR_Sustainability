@@ -7,10 +7,10 @@ public class CupGrid : MonoBehaviour
 	public GameObject block;
   public bool update;
 
-	public int cupWidth = 2;
-	public int cupHeight = 2;
+	public float cupWidth = 0.085;
+	public float cupHeight = 0.105;
 
-	public int amount = 3;
+	public int amount = 500;
 	public float placeDelay = 0.05f;
 	private int amountPlaced = 0;
 

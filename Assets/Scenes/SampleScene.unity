@@ -404,8 +404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block: {fileID: 5493992043758017214, guid: 80ad8d596cae49a4a93dbe19e9e24891, type: 3}
   update: 0
-  cupWidth: 3
-  cupHeight: 5
+  cupWidth: 0.085
+  cupHeight: 0.105
   amount: 5
   placeDelay: 0.05
   gridX: 40

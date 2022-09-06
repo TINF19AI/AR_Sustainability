@@ -52,13 +52,16 @@ public class MainMode : MonoBehaviour
 
     public void increaseAmount()
     {
-        currentAmount++;
+        // currentAmount++;
+        currentAmount += 50;
         updateView();
     }
 
     public void decreaseAmount()
     {
-        currentAmount--;
+        // currentAmount--;
+        currentAmount -= 50;
+
         updateView();
     }
 

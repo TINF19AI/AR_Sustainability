@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CupGrid : MonoBehaviour
 {
-	public GameObject block;
+	public GameObject cupObject;
+	public GameObject cupLayerObject;
   public bool update;
 
-	public float cupWidth = 0.085;
-	public float cupHeight = 0.105;
+	public float cupWidth = 0.085f;
+	public float cupHeight = 0.105f;
 
 	public int amount = 500;
 	public float placeDelay = 0.05f;
@@ -16,6 +17,9 @@ public class CupGrid : MonoBehaviour
 
 	public int gridX = 10;
 	public int gridY = 10;
+
+	//@todo
+	public int useLayerAtHeight = 2;
 
 	List<GameObject> cups = new List<GameObject>();
 
@@ -42,7 +46,7 @@ public class CupGrid : MonoBehaviour
 					yield return new WaitForSeconds(placeDelay);
 				}
 
-				Instantiate(i % gridX, (int)Mathf.Floor(i / (gridX * gridY)), (int)Mathf.Floor( (i % (gridX * gridY)) / gridY));
+				Instantiate(i % gridX, (int)Mathf.Floor(i / (gridX * gridY)), (int)Mathf.Floor( (i % (gridX * gridY)) / gridY), cupObject);
 			}
 		}
 
@@ -57,8 +61,8 @@ public class CupGrid : MonoBehaviour
 		}
 	}
 
-	void Instantiate(int x, int y, int z){
-		GameObject cup = Instantiate(block, new Vector3(x * cupWidth, y * cupHeight, z * cupWidth), Quaternion.identity);
+	void Instantiate(int x, int y, int z, GameObject placeObject){
+		GameObject cup = Instantiate(placeObject, new Vector3(x * cupWidth, y * cupHeight, z * cupWidth), Quaternion.identity);
 		cup.gameObject.name = "cup_" + x + "_" + y + "_" + z;
 		cup.transform.parent = gameObject.transform;
 		cups.Add(cup);

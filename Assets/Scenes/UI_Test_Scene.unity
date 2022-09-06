@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1158,7 +1158,6 @@ MonoBehaviour:
   update: 0
   cupWidth: 8.5
   cupHeight: 8
-  amount: 1
   placeDelay: 0.05
   gridX: 10
   gridY: 10
@@ -1209,7 +1208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSpawner: {fileID: 704592443}
   tapText: {fileID: 1098360506}
-  currentAmount: 5
+  currentAmount: 1
 --- !u!1 &782628375
 GameObject:
   m_ObjectHideFlags: 0

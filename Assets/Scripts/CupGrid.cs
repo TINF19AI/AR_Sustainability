@@ -11,9 +11,9 @@ public class CupGrid : MonoBehaviour
 	public float cupWidth = 0.085f;
 	public float cupHeight = 0.105f;
 
-	public int amount = 500;
+	// public int amount = 500;
 	public float placeDelay = 0.05f;
-	private int amountPlaced = 0;
+	private int amountPlacedGlobal = 0;
 
 	public int gridX = 10;
 	public int gridY = 10;
@@ -27,11 +27,13 @@ public class CupGrid : MonoBehaviour
 // slider beschreibt anzahl der Becher
 
 	void Start(){
-		StartCoroutine(Spawn());
+		StartCoroutine(Spawn(0, amountPlacedGlobal));
 	}
 
-	IEnumerator Spawn()
+	IEnumerator Spawn(int amount, int amountPlaced)
 	{
+		Debug.Log("amount" + amount + "amountPlaced" + amountPlaced);
+
 		if(amount < amountPlaced){
 			// remove
 			for(int i = amountPlaced; i > amount; i--){
@@ -42,23 +44,23 @@ public class CupGrid : MonoBehaviour
 		}else{
 			// add
 			for (int i = amountPlaced; i < amount; i++){
-				if(i % 100 == 0){
-					yield return new WaitForSeconds(placeDelay);
-				}
+				// if(i % 100 == 0){
+				// 	yield return new WaitForSeconds(placeDelay);
+				// }
 
 				Instantiate(i % gridX, (int)Mathf.Floor(i / (gridX * gridY)), (int)Mathf.Floor( (i % (gridX * gridY)) / gridY), cupObject);
 			}
 		}
 
-		amountPlaced = amount;
+		amountPlacedGlobal = amount;
 		yield return null;
 	}
 
 	void Update(){
-		if (update){
-			update = false;
-			StartCoroutine(Spawn());
-		}
+		// if (update){
+		// 	update = false;
+		// 	StartCoroutine(Spawn());
+		// }
 	}
 
 	void Instantiate(int x, int y, int z, GameObject placeObject){
@@ -69,8 +71,8 @@ public class CupGrid : MonoBehaviour
 	}
 
 	public void SetCupAmount(int amountToPlace){
-		amount = amountToPlace;
-		StartCoroutine(Spawn());
+		// amount = amountToPlace;
+		StartCoroutine(Spawn(amountToPlace, amountPlacedGlobal));
 	}
 }
 

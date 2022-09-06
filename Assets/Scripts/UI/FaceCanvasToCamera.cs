@@ -15,5 +15,16 @@ public class FaceCanvasToCamera : MonoBehaviour
     {
         Quaternion lookRotation = Camera.main.transform.rotation;
         transform.rotation = lookRotation;
+
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Debug.Log("Button down");
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
+        //        Debug.Log("Hit: " + hit.transform.gameObject.name);
+        //    }
+        //}
     }
 }

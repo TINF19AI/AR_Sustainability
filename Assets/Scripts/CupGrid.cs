@@ -18,6 +18,8 @@ public class CupGrid : MonoBehaviour
 	public int gridX = 10;
 	public int gridY = 10;
 
+	private int numberOfCupsToKeepActiveFromTop = 201;
+
 	//@todo
 	public int useLayerAtHeight = 2;
 
@@ -39,6 +41,9 @@ public class CupGrid : MonoBehaviour
 			for(int i = amountPlaced; i > amount; i--){
 				Destroy(cups[i-1]);
 				cups.RemoveAt(i-1);
+
+
+				ShowCupIfNotUseless(i);
 			}
 
 		}else{
@@ -48,7 +53,13 @@ public class CupGrid : MonoBehaviour
 				// 	yield return new WaitForSeconds(placeDelay);
 				// }
 
-				Instantiate(i % gridX, (int)Mathf.Floor(i / (gridX * gridY)), (int)Mathf.Floor( (i % (gridX * gridY)) / gridY), cupObject);
+				Instantiate(getX(i), getY(i), getZ(i), cupObject);
+
+
+				HideCupIfUseless(i);
+
+
+
 			}
 		}
 
@@ -66,6 +77,7 @@ public class CupGrid : MonoBehaviour
 	void Instantiate(int x, int y, int z, GameObject placeObject){
 		GameObject cup = Instantiate(placeObject, new Vector3(x * cupWidth, y * cupHeight, z * cupWidth), Quaternion.identity, gameObject.transform);
 		cup.gameObject.name = "cup_" + x + "_" + y + "_" + z;
+		// cup.gameObject.SetActive(false);
 		// cup.transform.parent = gameObject.transform;
 		cups.Add(cup);
 	}
@@ -73,6 +85,34 @@ public class CupGrid : MonoBehaviour
 	public void SetCupAmount(int amountToPlace){
 		// amount = amountToPlace;
 		StartCoroutine(Spawn(amountToPlace, amountPlacedGlobal));
+	}
+
+	private void HideCupIfUseless(int i){
+		if(i - numberOfCupsToKeepActiveFromTop >= 0 && cups[i - numberOfCupsToKeepActiveFromTop] != null){
+			if(getX(i) == 0) return;
+			// if(getX(i) == (gridX - 1)) return;
+			if(getZ(i) == 0 || getZ(i) == gridY - 1) return;
+
+			cups[i - numberOfCupsToKeepActiveFromTop].gameObject.SetActive(false);
+		}
+	}
+
+	private void ShowCupIfNotUseless(int i){
+		if(i - numberOfCupsToKeepActiveFromTop >= 0 && cups[i - numberOfCupsToKeepActiveFromTop] != null){
+			cups[i - numberOfCupsToKeepActiveFromTop].gameObject.SetActive(true);
+		}
+	}
+
+	private int getX(int i){
+		return i % gridX;
+	}
+
+	private int getY(int i){
+		return (int)Mathf.Floor(i / (gridX * gridY));
+	}
+
+	private int getZ(int i){
+		return (int)Mathf.Floor( (i % (gridX * gridY)) / gridY);
 	}
 }
 

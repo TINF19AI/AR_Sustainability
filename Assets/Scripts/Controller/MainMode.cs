@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,7 +49,24 @@ public class MainMode : MonoBehaviour
     //        Debug.Log("Button Clicked: " + data.selectedObject.name);
     //    }
 
+    public void SliderChanged(System.Single value)
+    {
+        int cups = convertSliderToCup(value);
+        Debug.Log("Converted " + value.ToString() + " to " + cups.ToString());
+   
+    }
+
     //}
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="value">Float between 0 and 15</param>
+    /// <returns>Amount of Cups</returns>
+    int convertSliderToCup(System.Single value)
+    {
+        float result = Mathf.Pow(2.71828f, value);
+        return (int)Math.Round(result, 0);
+    }
 
     public void increaseAmount()
     {

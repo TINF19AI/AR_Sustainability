@@ -8,6 +8,8 @@ using TMPro;
 
 public class MainMode : MonoBehaviour
 {
+    [SerializeField] GameObject gridSpawner;
+
     [SerializeField] TextMeshProUGUI tapText;
     [SerializeField] int currentAmount;
 
@@ -21,6 +23,8 @@ public class MainMode : MonoBehaviour
         //rc = GetComponent<GraphicRaycaster>();
         //eventSystem = GetComponent<EventSystem>();
         UIController.ShowUI("main");
+        gridSpawner.GetComponent<CupGrid>().SetCupAmount(currentAmount);
+
     }
 
     // Update is called once per frame
@@ -43,7 +47,7 @@ public class MainMode : MonoBehaviour
     //    {
     //        Debug.Log("Button Clicked: " + data.selectedObject.name);
     //    }
-        
+
     //}
 
     public void increaseAmount()
@@ -61,5 +65,7 @@ public class MainMode : MonoBehaviour
     void updateView() {
         Debug.Log("update view called");
         tapText.text = "Amount: " + currentAmount.ToString();
+
+        gridSpawner.GetComponent<CupGrid>().SetCupAmount(currentAmount);
     }
 }

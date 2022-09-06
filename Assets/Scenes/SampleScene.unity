@@ -402,14 +402,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4a43c9c74ed9043953509ea6647b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 5493992043758017214, guid: 80ad8d596cae49a4a93dbe19e9e24891, type: 3}
+  cupObject: {fileID: 5493992043758017214, guid: 80ad8d596cae49a4a93dbe19e9e24891, type: 3}
+  cupLayerObject: {fileID: 0}
   update: 0
   cupWidth: 0.085
   cupHeight: 0.105
-  amount: 5
+  amount: 1
   placeDelay: 0.05
-  gridX: 40
-  gridY: 40
+  gridX: 10
+  gridY: 10
+  useLayerAtHeight: 2
 --- !u!1 &1375480522
 GameObject:
   m_ObjectHideFlags: 0

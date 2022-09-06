@@ -62,10 +62,15 @@ public class CupGrid : MonoBehaviour
 	}
 
 	void Instantiate(int x, int y, int z, GameObject placeObject){
-		GameObject cup = Instantiate(placeObject, new Vector3(x * cupWidth, y * cupHeight, z * cupWidth), Quaternion.identity);
+		GameObject cup = Instantiate(placeObject, new Vector3(x * cupWidth, y * cupHeight, z * cupWidth), Quaternion.identity, gameObject.transform);
 		cup.gameObject.name = "cup_" + x + "_" + y + "_" + z;
-		cup.transform.parent = gameObject.transform;
+		// cup.transform.parent = gameObject.transform;
 		cups.Add(cup);
+	}
+
+	public void SetCupAmount(int amountToPlace){
+		amount = amountToPlace;
+		StartCoroutine(Spawn());
 	}
 }
 

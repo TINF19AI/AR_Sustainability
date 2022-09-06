@@ -53,12 +53,13 @@ public class MainMode : MonoBehaviour
     {
         int cups = convertSliderToCup(value);
         Debug.Log("Converted " + value.ToString() + " to " + cups.ToString());
-   
+        gridSpawner.GetComponent<CupGrid>().SetCupAmount(cups);
+
     }
 
     //}
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="value">Float between 0 and 15</param>
     /// <returns>Amount of Cups</returns>
@@ -68,25 +69,4 @@ public class MainMode : MonoBehaviour
         return (int)Math.Round(result, 0);
     }
 
-    public void increaseAmount()
-    {
-        // currentAmount++;
-        currentAmount += 50;
-        updateView();
-    }
-
-    public void decreaseAmount()
-    {
-        // currentAmount--;
-        currentAmount -= 50;
-
-        updateView();
-    }
-
-    void updateView() {
-        Debug.Log("update view called");
-        tapText.text = "Amount: " + currentAmount.ToString();
-
-        gridSpawner.GetComponent<CupGrid>().SetCupAmount(currentAmount);
-    }
 }

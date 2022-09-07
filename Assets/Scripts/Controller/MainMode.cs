@@ -11,7 +11,7 @@ public class MainMode : MonoBehaviour
 {
     [SerializeField] GameObject gridSpawner;
 
-    [SerializeField] TextMeshProUGUI tapText;
+    [SerializeField] Text guessText;
     [SerializeField] int currentAmount;
 
     //private PointerEventData pt;
@@ -55,6 +55,7 @@ public class MainMode : MonoBehaviour
         Debug.Log("Converted " + value.ToString() + " to " + cups.ToString());
         gridSpawner.GetComponent<CupGrid>().SetCupAmount(cups);
         currentAmount = cups;
+        UpdateView();
 
     }
 
@@ -66,7 +67,7 @@ public class MainMode : MonoBehaviour
     /// <returns>Amount of Cups</returns>
     int convertSliderToCup(System.Single value)
     {
-        float result = Mathf.Pow(2.71828f, value);
+        float result = Mathf.Pow(2.71828f, value+7)-1096f;
         return (int)Math.Round(result, 0);
     }
 
@@ -75,4 +76,9 @@ public class MainMode : MonoBehaviour
         InteractionController.EnableMode("result");
     }
 
+
+    void UpdateView() {
+        guessText.text = "Your Current Guess: " + currentAmount.ToString() + " Cups";
+        
+    }
 }

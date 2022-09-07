@@ -11,7 +11,7 @@ public class ScanMode : MonoBehaviour
     {
         UIController.ShowUI("scan");
         ImageTarget.SetActive(true);
-        UIController.SetHelpButtonVisible(true);
+        //UIController.SetHelpButtonVisible(true);
     }
 
     // Update is called once per frame

@@ -11,20 +11,18 @@ public class StartupMode : MonoBehaviour
 
     void OnEnable()
     {
-        arCamera.SetActive(false);
         UIController.ShowUI("startup");
         ImageTarget.SetActive(false);
     }
 
     public void ContinueApplication()
     {
-        arCamera.SetActive(true);
         InteractionController.EnableMode("scan");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //VuforiaBehaviour.
+
     }
 }

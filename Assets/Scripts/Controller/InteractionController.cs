@@ -2,12 +2,14 @@ using System.Collections;
 using UnityEngine;
 using RotaryHeart.Lib.SerializableDictionary;
 
-[System.Serializable]
-public class InteractionModeDictionary : SerializableDictionaryBase<string, GameObject> { }
+[System.Serializable] public class InteractionModeDictionary : SerializableDictionaryBase<string, GameObject> { }
+
+[System.Serializable] public class GlobalStateDictionary : SerializableDictionaryBase<string, string> { }
 
 public class InteractionController : Singleton<InteractionController>
 {
     [SerializeField] InteractionModeDictionary interactionModes;
+    [SerializeField] GlobalStateDictionary globalState;
     GameObject currentMode;
 
     protected override void Awake()
@@ -51,6 +53,14 @@ public class InteractionController : Singleton<InteractionController>
         {
             Debug.LogError("undefined mode named " + name);
         }
+    }
+
+    public static GlobalStateDictionary GetGlobalState() {
+        return Instance?._GetGlobalStateDictionary();
+    }
+
+    GlobalStateDictionary _GetGlobalStateDictionary() {
+        return globalState;
     }
 
     IEnumerator ChangeMode(GameObject mode)

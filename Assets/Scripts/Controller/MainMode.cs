@@ -54,6 +54,7 @@ public class MainMode : MonoBehaviour
         int cups = convertSliderToCup(value);
         Debug.Log("Converted " + value.ToString() + " to " + cups.ToString());
         gridSpawner.GetComponent<CupGrid>().SetCupAmount(cups);
+        currentAmount = cups;
 
     }
 
@@ -67,6 +68,11 @@ public class MainMode : MonoBehaviour
     {
         float result = Mathf.Pow(2.71828f, value);
         return (int)Math.Round(result, 0);
+    }
+
+    public void SubmitGuess() {
+        InteractionController.GetGlobalState()["guessedValue"] = currentAmount.ToString();
+        InteractionController.EnableMode("result");
     }
 
 }

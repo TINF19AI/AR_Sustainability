@@ -10,10 +10,10 @@ public class CupGrid : MonoBehaviour
 	public Vector3 cupSize = new Vector3();
 	private int amountPlacedGlobal = 0;
 
-	public int gridX = 10;
-	public int gridY = 10;
+	public int gridX = 25;
+	public int gridZ = 25;
 
-	private int numberOfCupsToKeepActiveFromTop = 201;
+	private int numberOfCupsToKeepActiveFromTop = 625;
 
 	//@todo
 	public int useLayerAtHeight = 2;
@@ -41,7 +41,6 @@ public class CupGrid : MonoBehaviour
 				Destroy(cups[i-1]);
 				cups.RemoveAt(i-1);
 
-
 				ShowCupIfNotUseless(i);
 			}
 
@@ -50,8 +49,12 @@ public class CupGrid : MonoBehaviour
 			// add
 			for (int i = amountPlaced; i < amount; i++){
 
-				Instantiate(getX(i), getY(i), getZ(i), cupObject);
-				HideCupIfUseless(i);
+				if(i > 7500 && !IsAtEdge(getPosition(i))){
+					cups.Add(null);
+				}else{
+					Instantiate(getX(i), getY(i), getZ(i), cupObject);
+					HideCupIfUseless(i);
+				}
 
 			}
 		}
@@ -95,11 +98,11 @@ public class CupGrid : MonoBehaviour
 	}
 
 	private int getY(int i){
-		return (int)Mathf.Floor(i / (gridX * gridY));
+		return (int)Mathf.Floor(i / (gridX * gridZ));
 	}
 
 	private int getZ(int i){
-		return (int)Mathf.Floor( (i % (gridX * gridY)) / gridY);
+		return (int)Mathf.Floor( (i % (gridX * gridZ)) / gridZ);
 	}
 
 	private Vector3 getPosition(int i){
@@ -117,11 +120,11 @@ public class CupGrid : MonoBehaviour
 
 
 	bool IsAtEdge(Vector3 position){
-		if(position.x == 1 || position.x == 2) return true;
-		if(position.x == 9 || position.x == 0) return true;
+		if(position.x == 0 || position.x == 1) return true;
+		if(position.x == gridX - 1 || position.x == gridX - 2) return true;
 
 		if(position.z == 0 || position.z == 1) return true;
-		if(position.z == 8 || position.z == 9) return true;
+		if(position.z == gridZ - 1 || position.z == gridZ - 2) return true;
 
 		return false;
 	}

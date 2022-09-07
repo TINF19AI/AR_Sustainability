@@ -1213,8 +1213,8 @@ MonoBehaviour:
   cupObject: {fileID: 5493992043758017214, guid: 80ad8d596cae49a4a93dbe19e9e24891, type: 3}
   cupLayerObject: {fileID: 0}
   cupSize: {x: 0, y: 0, z: 0}
-  gridX: 10
-  gridY: 10
+  gridX: 25
+  gridZ: 25
   useLayerAtHeight: 2
 --- !u!1 &706096961
 GameObject:

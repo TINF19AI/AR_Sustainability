@@ -6,13 +6,8 @@ public class CupGrid : MonoBehaviour
 {
 	public GameObject cupObject;
 	public GameObject cupLayerObject;
-  public bool update;
 
-	public float cupWidth = 0.085f;
-	public float cupHeight = 0.105f;
-
-	// public int amount = 500;
-	public float placeDelay = 0.05f;
+	public Vector3 cupSize = new Vector3();
 	private int amountPlacedGlobal = 0;
 
 	public int gridX = 10;
@@ -34,8 +29,12 @@ public class CupGrid : MonoBehaviour
 
 	IEnumerator Spawn(int amount, int amountPlaced)
 	{
-		Debug.Log("amount" + amount + "amountPlaced" + amountPlaced);
+		// Calculate bounds for the first Cup
+		if(cups.Count > 0 && cupSize.x == 0 && cupSize.y == 0	&& cupSize.z == 0){
+			cupSize = Vector3.Scale(GetMaxBounds(cups[0]).max, new Vector3(2,2,2));
+		}
 
+		// More cups than needed? Remove
 		if(amount < amountPlaced){
 			// remove
 			for(int i = amountPlaced; i > amount; i--){
@@ -46,19 +45,13 @@ public class CupGrid : MonoBehaviour
 				ShowCupIfNotUseless(i);
 			}
 
+		// Place more cups
 		}else{
 			// add
 			for (int i = amountPlaced; i < amount; i++){
-				// if(i % 100 == 0){
-				// 	yield return new WaitForSeconds(placeDelay);
-				// }
 
 				Instantiate(getX(i), getY(i), getZ(i), cupObject);
-
-
 				HideCupIfUseless(i);
-
-
 
 			}
 		}
@@ -68,17 +61,11 @@ public class CupGrid : MonoBehaviour
 	}
 
 	void Update(){
-		// if (update){
-		// 	update = false;
-		// 	StartCoroutine(Spawn());
-		// }
 	}
 
 	void Instantiate(int x, int y, int z, GameObject placeObject){
-		GameObject cup = Instantiate(placeObject, new Vector3(x * cupWidth, y * cupHeight, z * cupWidth), Quaternion.identity, gameObject.transform);
+		GameObject cup = Instantiate(placeObject, new Vector3(x * cupSize.x, y * cupSize.y, z * cupSize.z), Quaternion.identity, gameObject.transform);
 		cup.gameObject.name = "cup_" + x + "_" + y + "_" + z;
-		// cup.gameObject.SetActive(false);
-		// cup.transform.parent = gameObject.transform;
 		cups.Add(cup);
 	}
 
@@ -89,9 +76,9 @@ public class CupGrid : MonoBehaviour
 
 	private void HideCupIfUseless(int i){
 		if(i - numberOfCupsToKeepActiveFromTop >= 0 && cups[i - numberOfCupsToKeepActiveFromTop] != null){
-			if(getX(i) == 0) return;
-			// if(getX(i) == (gridX - 1)) return;
-			if(getZ(i) == 0 || getZ(i) == gridY - 1) return;
+			if(IsAtEdge(getPosition(i))){
+				return;
+			}
 
 			cups[i - numberOfCupsToKeepActiveFromTop].gameObject.SetActive(false);
 		}
@@ -114,55 +101,28 @@ public class CupGrid : MonoBehaviour
 	private int getZ(int i){
 		return (int)Mathf.Floor( (i % (gridX * gridY)) / gridY);
 	}
+
+	private Vector3 getPosition(int i){
+		return new Vector3(getX(i), getY(i), getZ(i));
+	}
+
+
+	Bounds GetMaxBounds(GameObject g) {
+		var b = new Bounds(g.transform.position, Vector3.zero);
+		foreach (Renderer r in g.GetComponentsInChildren<Renderer>()) {
+			b.Encapsulate(r.bounds);
+		}
+		return b;
+	}
+
+
+	bool IsAtEdge(Vector3 position){
+		if(position.x == 1 || position.x == 2) return true;
+		if(position.x == 9 || position.x == 0) return true;
+
+		if(position.z == 0 || position.z == 1) return true;
+		if(position.z == 8 || position.z == 9) return true;
+
+		return false;
+	}
 }
-
-
-
-
-
-
-
-
-
-		// bool addChildren = false;
-
-		// if(prevWidth > width) {
-		// 	// remove previous prefabs
-
-		// }else{
-		// 	addChildren = true;
-		// }
-
-		// if(prevLength > length) {
-		// 	// remove previous prefabs
-
-		// }else{
-		// 	addChildren = true;
-		// }
-
-		// if(prevHeight > height) {
-		// 	// remove previous prefabs
-
-		// }else{
-		// 	addChildren = true;
-		// }
-
-		// if(addChildren == true){
-		// 	for (int x = 0; x<width; ++x)
-		// 	{
-		// 		for (int y = 0; y<length; ++y)
-		// 		{
-		// 			for (int z = 0; z<height; ++z)
-		// 			{
-		// 				if(GameObject.Find ("cup_" + x + "_" + y + "_" + z) == null){
-		// 					Instantiate(x, y, z);
-		// 				}
-		// 			}
-		// 		}
-		// 	}
-		// }
-
-		// // set current size to prevSize
-		// prevWidth = width;
-		// prevLength = length;
-		// prevHeight = height;

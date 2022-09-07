@@ -7,8 +7,7 @@ public class InteractionModeDictionary : SerializableDictionaryBase<string, Game
 
 public class InteractionController : Singleton<InteractionController>
 {
-    [SerializeField]
-    InteractionModeDictionary interactionModes;
+    [SerializeField] InteractionModeDictionary interactionModes;
     GameObject currentMode;
 
     protected override void Awake()
@@ -28,7 +27,7 @@ public class InteractionController : Singleton<InteractionController>
         {
             mode.SetActive(false);
         }
-    }
+    }   
 
     /// <summary>
     /// other scripts can call InteractionController.EnableMode(modename);

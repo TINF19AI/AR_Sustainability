@@ -11,6 +11,8 @@ public class UIController : Singleton<UIController>
     [SerializeField] UIPanelDictionary uiPanels; // dict that contains ui panels
     CanvasGroup currentPanel; // currently active panel
 
+    public CanvasGroup helpButton; // Question Mark Button top right
+
     protected override void Awake()
     {
         base.Awake();
@@ -71,6 +73,18 @@ public class UIController : Singleton<UIController>
         //panel.gameObject.SetActive(true);
     }
 
+    void SetVisibleAnimated(CanvasGroup canvasElement, bool new_visibility) {
+        if (canvasElement.gameObject.activeSelf == new_visibility)
+            return; // required visibility already fulfilled
+
+        if (new_visibility) { // fade in
+            canvasElement.gameObject.SetActive(true);
+            canvasElement.DOFade(1f, 0.5f);
+        } else { // fade out
+            canvasElement.DOFade(0f, 0.5f).OnComplete(() => canvasElement.gameObject.SetActive(false));
+        }
+    }
+
     void FadeIn(CanvasGroup panel)
     {
         panel.gameObject.SetActive(true);
@@ -80,6 +94,19 @@ public class UIController : Singleton<UIController>
     void FadeOut(CanvasGroup panel)
     {
         panel.DOFade(0f, 0.5f).OnComplete(() => panel.gameObject.SetActive(false));
+    }
+
+    public static void SetHelpButtonVisible(bool visible, bool animated = true)
+    {
+        Instance?._SetHelpButtonVisible(visible, animated);
+    }
+
+    void _SetHelpButtonVisible(bool visible, bool animated)
+    {
+        if (animated)
+            SetVisibleAnimated(helpButton, visible);
+        else
+            helpButton.gameObject.SetActive(visible);
     }
 }
 

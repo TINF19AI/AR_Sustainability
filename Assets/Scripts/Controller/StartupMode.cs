@@ -8,9 +8,11 @@ public class StartupMode : MonoBehaviour
     [SerializeField] string nextMode = "scan";
     [SerializeField] GameObject ImageTarget;
     public GameObject arCamera;
+    bool visible = false;
 
     void OnEnable()
     {
+        UIController.SetHelpButtonVisible(false, false);
         UIController.ShowUI("startup");
         ImageTarget.SetActive(false);
     }

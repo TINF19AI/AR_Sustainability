@@ -3531,6 +3531,22 @@ PrefabInstance:
         Try to guess how many cups are used
         each year.'
       objectReference: {fileID: 0}
+    - target: {fileID: 2873754420236904584, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420236904584, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420236904584, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420236904591, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: on
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2873754420295916027, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Color.b
       value: 0.9607843
@@ -3542,6 +3558,14 @@ PrefabInstance:
     - target: {fileID: 2873754420295916027, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Color.r
       value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8687711989487263008, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Pivot.x

@@ -74,7 +74,7 @@ public class MainMode : MonoBehaviour
     }
 
     public void SubmitGuess() {
-        InteractionController.GetGlobalState()["guessedValue"] = currentAmount.ToString();
+        InteractionController.GetGlobalState()["guessedValue"] = currentAmount.ToString("#,##0");
         InteractionController.EnableMode("result");
     }
 

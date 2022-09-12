@@ -1140,6 +1140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guessValueText: {fileID: 407663432}
   correctValueText: {fileID: 514157718}
+  correctValue: 40000
+  gridSpawner: {fileID: 704592443}
 --- !u!1 &514157716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,10 +1823,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cupObject: {fileID: 5493992043758017214, guid: 80ad8d596cae49a4a93dbe19e9e24891, type: 3}
-  cupLayerObject: {fileID: 0}
+  cupHighlightedObject: {fileID: 5493992043758017214, guid: 8c19021fdf1394440b37797f2a1dd8e3, type: 3}
   cupSize: {x: 0, y: 0, z: 0}
   gridX: 25
   gridZ: 25
+  numberOfCupsToKeepActiveFromTop: 625
+  dontInstantiateAtCups: 7500
   useLayerAtHeight: 2
 --- !u!1 &706096961
 GameObject:
@@ -1871,6 +1875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSpawner: {fileID: 704592443}
+  ImageTarget: {fileID: 782628375}
   guessText: {fileID: 796227278}
   currentAmount: 1
 --- !u!1 &748211507

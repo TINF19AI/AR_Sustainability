@@ -5,7 +5,7 @@ using UnityEngine;
 public class CupGrid : MonoBehaviour
 {
 	public GameObject cupObject;
-	public GameObject cupLayerObject;
+	public GameObject cupHighlightedObject;
 
 	public Vector3 cupSize = new Vector3();
 	private int amountPlacedGlobal = 0;
@@ -13,7 +13,8 @@ public class CupGrid : MonoBehaviour
 	public int gridX = 25;
 	public int gridZ = 25;
 
-	private int numberOfCupsToKeepActiveFromTop = 625;
+	public int numberOfCupsToKeepActiveFromTop = 625;
+	public int dontInstantiateAtCups = 7500;
 
 	//@todo
 	public int useLayerAtHeight = 2;
@@ -24,11 +25,13 @@ public class CupGrid : MonoBehaviour
 // slider beschreibt anzahl der Becher
 
 	void Start(){
-		StartCoroutine(Spawn(0, amountPlacedGlobal));
+		SetCupAmount(0);
 	}
 
-	IEnumerator Spawn(int amount, int amountPlaced)
+	IEnumerator Spawn(int amount, int amountPlaced, bool defaultPrefab)
 	{
+
+
 		// Calculate bounds for the first Cup
 		if(cups.Count > 0 && cupSize.x == 0 && cupSize.y == 0	&& cupSize.z == 0){
 			cupSize = Vector3.Scale(GetMaxBounds(cups[0]).max, new Vector3(2,2,2));
@@ -49,10 +52,10 @@ public class CupGrid : MonoBehaviour
 			// add
 			for (int i = amountPlaced; i < amount; i++){
 
-				if(i > 7500 && !IsAtEdge(getPosition(i))){
+				if(i > dontInstantiateAtCups && !IsAtEdge(getPosition(i))){
 					cups.Add(null);
 				}else{
-					Instantiate(getX(i), getY(i), getZ(i), cupObject);
+					Instantiate(getX(i), getY(i), getZ(i), defaultPrefab ? cupObject : cupHighlightedObject );
 					HideCupIfUseless(i);
 				}
 
@@ -72,9 +75,26 @@ public class CupGrid : MonoBehaviour
 		cups.Add(cup);
 	}
 
-	public void SetCupAmount(int amountToPlace){
-		// amount = amountToPlace;
-		StartCoroutine(Spawn(amountToPlace, amountPlacedGlobal));
+	public void SetCupAmount(int amountToPlace, bool defaultPrefab = true){
+		StartCoroutine(Spawn(amountToPlace, amountPlacedGlobal, defaultPrefab));
+	}
+
+	public void SetHighlightedCups(int realAmountOfCups){
+		StartCoroutine(HightlightCups(amountPlacedGlobal, realAmountOfCups));
+	}
+
+	private IEnumerator HightlightCups(int guessedAmount, int realAmountOfCups){
+		if(guessedAmount > realAmountOfCups){
+			// More than correct amount
+			SetCupAmount(realAmountOfCups);
+			SetCupAmount(guessedAmount, false);
+
+		}else{
+			// Less then correct amount
+			SetCupAmount(realAmountOfCups, false);
+		}
+
+		yield return null;
 	}
 
 	private void HideCupIfUseless(int i){

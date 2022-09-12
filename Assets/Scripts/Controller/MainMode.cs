@@ -10,6 +10,7 @@ using TMPro;
 public class MainMode : MonoBehaviour
 {
     [SerializeField] GameObject gridSpawner;
+    [SerializeField] GameObject ImageTarget;
 
     [SerializeField] Text guessText;
     [SerializeField] int currentAmount;
@@ -24,6 +25,7 @@ public class MainMode : MonoBehaviour
         //rc = GetComponent<GraphicRaycaster>();
         //eventSystem = GetComponent<EventSystem>();
         UIController.ShowUI("main");
+        ImageTarget.SetActive(true);
         gridSpawner.GetComponent<CupGrid>().SetCupAmount(currentAmount);
 
     }
@@ -79,6 +81,6 @@ public class MainMode : MonoBehaviour
 
     void UpdateView() {
         guessText.text = "Your Current Guess: " + currentAmount.ToString() + " Cups";
-        
+
     }
 }

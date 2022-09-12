@@ -156,7 +156,7 @@ RectTransform:
   - {fileID: 1817708128}
   - {fileID: 1104590747}
   m_Father: {fileID: 1140646501}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -341,7 +341,7 @@ RectTransform:
   - {fileID: 1102607927}
   - {fileID: 1103089880}
   m_Father: {fileID: 1140646501}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -708,7 +708,7 @@ RectTransform:
   - {fileID: 1025908692}
   - {fileID: 640252343}
   m_Father: {fileID: 1140646501}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1460,7 +1460,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1616673032}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &455567005
 MonoBehaviour:
@@ -1723,7 +1723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 40.000
+  m_Text: 42,000
 --- !u!222 &514157719
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1761,6 +1761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf401272b362814fa906193e9547dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ImageTarget: {fileID: 782628375}
 --- !u!4 &540677227
 Transform:
   m_ObjectHideFlags: 0
@@ -1774,143 +1775,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1616673032}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &570241092
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 570241093}
-  - component: {fileID: 570241095}
-  - component: {fileID: 570241094}
-  m_Layer: 5
-  m_Name: AR Unsupported Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &570241093
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570241092}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1886101977}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &570241094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570241092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Augmented reality not supported on this device.
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &570241095
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570241092}
-  m_CullTransparentMesh: 1
 --- !u!1001 &572888312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2021,6 +1887,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6746288611959738864, guid: 504fe8044c2518946bc79058c004f80c, type: 3}
   m_PrefabInstance: {fileID: 572888312}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &588894381 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+  m_PrefabInstance: {fileID: 8687711988441517560}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &634298605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +1945,7 @@ RectTransform:
   - {fileID: 572888313}
   - {fileID: 1956462164}
   m_Father: {fileID: 1140646501}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2286,11 +2157,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '<size=75>Hello</size>
+  m_Text: '<size=75>Hello!</size>
 
 
     Try to guess how many single-use cups are
-    wasted each year at the Studierendenwerk Ulm!'
+    wasted each year at the Studierendenwerk Ulm.'
 --- !u!222 &648608682
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2381,7 +2252,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1616673032}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &706096963
 MonoBehaviour:
@@ -3005,6 +2876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrimaryButton
       objectReference: {fileID: 0}
+    - target: {fileID: 8187061743929291764, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
 --- !u!224 &865191168 stripped
@@ -3118,7 +2993,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1616673032}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &927120374
 MonoBehaviour:
@@ -3524,12 +3399,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 18092033}
     m_Modifications:
+    - target: {fileID: 2873754419673795969, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_Name
+      value: HelpText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754419673795970, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754419673795970, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2873754419673795971, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Text
-      value: '<size=75>Title</size>
+      value: '<size=75>Results</size>
 
-        Try to guess how many cups are used
-        each year.'
+
+        The blue cups represent the difference
+        between your estimated amount and the actual single-use cup usage at the
+        Studierendenwerk Ulm.'
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420236904584, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Alpha
@@ -3558,6 +3447,10 @@ PrefabInstance:
     - target: {fileID: 2873754420295916027, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Color.r
       value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_LocalScale.x
@@ -3756,21 +3649,18 @@ MonoBehaviour:
     isExpanded: 1
     _keyValues:
     - startup
-    - nonar
     - scan
     - main
     - result
     - end
     _keys:
     - startup
-    - nonar
     - scan
     - main
     - result
     - end
     _values:
     - {fileID: 1749171067}
-    - {fileID: 1886101975}
     - {fileID: 79276521}
     - {fileID: 634298606}
     - {fileID: 18092034}
@@ -3849,7 +3739,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1749171069}
-  - {fileID: 1886101977}
   - {fileID: 79276523}
   - {fileID: 634298608}
   - {fileID: 18092033}
@@ -4047,11 +3936,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '42.000 cups stacked on top of each other are the same height as 11 Eiffel
+  m_Text: '42,000 cups stacked on top of each other are the same height as 11 Eiffel
     Towers.
 
 
-    You can '
+    Even small actions like using your own cup at the coffee machine
+    add up when many people do it.'
 --- !u!222 &1211107563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4276,7 +4166,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 1400}
+  m_SizeDelta: {x: 1000, y: 1500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1392587237
 GameObject:
@@ -4425,9 +4315,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "<b>Did you know?</b>\n\nYou can rent a reusable cup for a 2\u20AC deposit
-    at the cafeteria counter. After you're done using it, you can return it to get
-    your deposit back.\n\nClick here to learn more."
+  m_Text: "<size=60><b>Did you know?</b></size>\n\nYou can rent a reusable cup for
+    a 2\u20AC deposit at the cafeteria counter. After you're done using it, you can
+    return it to get your deposit back.\n\nClick here to learn more."
 --- !u!222 &1405048162
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4634,6 +4524,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463136740}
   m_CullTransparentMesh: 0
+--- !u!1 &1543748955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543748956}
+  - component: {fileID: 1543748958}
+  - component: {fileID: 1543748957}
+  m_Layer: 5
+  m_Name: ImageTargetExample
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1543748956
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543748955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 588894381}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 0, y: 500}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1543748957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543748955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5be65d978cd25304b94c160b38d81d10, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1543748958
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543748955}
+  m_CullTransparentMesh: 1
 --- !u!1 &1601299842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4725,21 +4691,18 @@ MonoBehaviour:
     isExpanded: 1
     _keyValues:
     - startup
-    - nonar
     - scan
     - main
     - result
     - end
     _keys:
     - startup
-    - nonar
     - scan
     - main
     - result
     - end
     _values:
     - {fileID: 2050243735}
-    - {fileID: 2032398076}
     - {fileID: 927120372}
     - {fileID: 706096961}
     - {fileID: 455567003}
@@ -4783,7 +4746,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2050243737}
-  - {fileID: 2032398077}
   - {fileID: 927120373}
   - {fileID: 706096962}
   - {fileID: 455567004}
@@ -5256,65 +5218,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871968359}
   m_CullTransparentMesh: 0
---- !u!1 &1886101974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1886101977}
-  - component: {fileID: 1886101976}
-  - component: {fileID: 1886101975}
-  m_Layer: 5
-  m_Name: NonAR UI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!225 &1886101975
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886101974}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
---- !u!222 &1886101976
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886101974}
-  m_CullTransparentMesh: 1
---- !u!224 &1886101977
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886101974}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 570241093}
-  m_Father: {fileID: 1140646501}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1887825889
 GameObject:
   m_ObjectHideFlags: 0
@@ -5696,12 +5599,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 634298608}
     m_Modifications:
+    - target: {fileID: 2873754419673795969, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_Name
+      value: HelpText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754419673795970, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754419673795970, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2873754419673795971, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Text
-      value: '<size=75>Title</size>
+      value: '<size=75>Cup Usage Guessing</size>
 
-        Try to guess how many cups are used
-        each year.'
+
+        Try to guess how many
+        single-use cups are used each year at Studiendenwerk Ulm (around 28,000 students
+        at DHBW Heidenheim, Ulm University, ...)'
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420236904584, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Alpha
@@ -5730,6 +5647,10 @@ PrefabInstance:
     - target: {fileID: 2873754420295916027, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Color.r
       value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_LocalScale.x
@@ -5834,37 +5755,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8687711989487263008, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
   m_PrefabInstance: {fileID: 1956462163}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2032398076
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2032398077}
-  m_Layer: 0
-  m_Name: NonAR Mode
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2032398077
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032398076}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1616673032}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050243735
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,7 +6373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4959338303160188337, guid: 6ee2f4d643d47664fa3c722baf740fb3, type: 3}
       propertyPath: m_Text
-      value: Point your camera to the tracker image.
+      value: Point your camera towards the Image Target.
       objectReference: {fileID: 0}
     - target: {fileID: 6307295697721883286, guid: 6ee2f4d643d47664fa3c722baf740fb3, type: 3}
       propertyPath: m_Name
@@ -6498,6 +6388,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 79276523}
     m_Modifications:
+    - target: {fileID: 2873754419673795969, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_Name
+      value: HelpText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754419673795970, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754419673795970, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754419673795971, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_Text
+      value: '<size=75>Image Target Scanning</size>
+
+
+        Point your phone camera
+        towards the Image Target on the table, so that it can be seen in the center
+        of the screen.
+
+
+        The Image Target should look like this:'
+      objectReference: {fileID: 0}
     - target: {fileID: 2873754420236904584, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Alpha
       value: 0
@@ -6514,6 +6428,10 @@ PrefabInstance:
       propertyPath: on
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2873754420236904591, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2873754420295916027, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Color.b
       value: 0.9607843
@@ -6525,6 +6443,10 @@ PrefabInstance:
     - target: {fileID: 2873754420295916027, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Color.r
       value: 0.99215686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_LocalScale.x

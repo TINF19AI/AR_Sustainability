@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class EndMode : MonoBehaviour
 {
+    public GameObject ImageTarget;
     private void OnEnable()
     {
         UIController.ShowUI("end");
+        ImageTarget.SetActive(false);
     }
 
     public void OpenLink()
     {
-        Application.OpenURL("https://www.heidenheim.dhbw.de/dhbw-heidenheim/wir-ueber-uns/nachhaltige-hochschule");
+        Application.OpenURL("https://studierendenwerk-ulm.de/studierendenwerk/nachhaltigkeit/#akkordeon-campusgastronomie");
     }
 
     public void ReturnToScan()

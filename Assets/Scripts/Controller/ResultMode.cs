@@ -20,6 +20,11 @@ public class ResultMode : MonoBehaviour
         gridSpawner.GetComponent<CupGrid>().SetHighlightedCups(correctValue);
     }
 
+    public void ShowEndScreen()
+    {
+        InteractionController.EnableMode("end");
+    }
+
     // Start is called before the first frame update
     void Start()
     {

@@ -25,3 +25,7 @@
 ### 3D Models
 
 * "[Coffee Shop Cup](https://skfb.ly/6RunB)" by David Zerba is licensed under [Creative Commons Attribution](http://creativecommons.org/licenses/by/4.0/)
+
+### Icons
+
+* [External link icons created by Bharat Icons - Flaticon](https://www.flaticon.com/free-icons/external-link)

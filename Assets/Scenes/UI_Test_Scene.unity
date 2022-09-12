@@ -3471,7 +3471,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Your Current Guess:'
+  m_Text: 'Your Current Guess:
+
+    1 Cup'
 --- !u!222 &796227279
 CanvasRenderer:
   m_ObjectHideFlags: 0

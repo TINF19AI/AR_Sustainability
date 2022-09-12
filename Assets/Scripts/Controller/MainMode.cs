@@ -80,7 +80,7 @@ public class MainMode : MonoBehaviour
 
 
     void UpdateView() {
-        guessText.text = "Your Current Guess: " + currentAmount.ToString() + " Cups";
+        guessText.text = "Your Current Guess: \n" + currentAmount.ToString("#,##0") + " Cup" + ((currentAmount == 1) ? "" : "s");
 
     }
 }

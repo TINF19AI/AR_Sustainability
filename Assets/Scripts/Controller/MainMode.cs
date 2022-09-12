@@ -14,6 +14,7 @@ public class MainMode : MonoBehaviour
 
     [SerializeField] Text guessText;
     [SerializeField] int currentAmount;
+    public UnityEngine.UI.Slider slider;
 
     //private PointerEventData pt;
     //private GraphicRaycaster rc;
@@ -22,8 +23,10 @@ public class MainMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         //rc = GetComponent<GraphicRaycaster>();
         //eventSystem = GetComponent<EventSystem>();
+        slider.value = 0;
         UIController.ShowUI("main");
         ImageTarget.SetActive(true);
         gridSpawner.GetComponent<CupGrid>().SetCupAmount(currentAmount);

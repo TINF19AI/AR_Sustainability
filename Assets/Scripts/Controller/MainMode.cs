@@ -23,7 +23,6 @@ public class MainMode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         //rc = GetComponent<GraphicRaycaster>();
         //eventSystem = GetComponent<EventSystem>();
         slider.value = 0;
@@ -56,12 +55,17 @@ public class MainMode : MonoBehaviour
 
     public void SliderChanged(System.Single value)
     {
-        int cups = convertSliderToCup(value);
+        int cups;
+        if (value == slider.maxValue) { // when slider is at max value, set amount of cups to 50000 flat
+            cups = 50000;
+        } else
+        {
+            cups = convertSliderToCup(value);
+        }
         Debug.Log("Converted " + value.ToString() + " to " + cups.ToString());
         gridSpawner.GetComponent<CupGrid>().SetCupAmount(cups);
         currentAmount = cups;
         UpdateView();
-
     }
 
     //}

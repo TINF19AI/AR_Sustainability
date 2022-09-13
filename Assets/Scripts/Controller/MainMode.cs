@@ -21,7 +21,7 @@ public class MainMode : MonoBehaviour
     //public EventSystem eventSystem;
 
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         //rc = GetComponent<GraphicRaycaster>();
         //eventSystem = GetComponent<EventSystem>();

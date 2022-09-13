@@ -22,6 +22,7 @@ public class ResultMode : MonoBehaviour
 
     public void ShowEndScreen()
     {
+        gridSpawner.GetComponent<CupGrid>().SetCupAmount(1);
         InteractionController.EnableMode("end");
     }
 

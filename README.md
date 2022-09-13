@@ -29,3 +29,7 @@
 ### Icons
 
 * [External link icons created by Bharat Icons - Flaticon](https://www.flaticon.com/free-icons/external-link)
+* [Recycle icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/recycle)
+* [Question icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/question)
+* [Info icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/info)
+* [Coffee cup icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/coffee-cup)

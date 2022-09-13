@@ -18,6 +18,7 @@ public class ResultMode : MonoBehaviour
         UIController.ShowUI("result");
 
         gridSpawner.GetComponent<CupGrid>().SetHighlightedCups(correctValue);
+        UAP_AccessibilityManager.SetLanguage("English");
     }
 
     public void ShowEndScreen()

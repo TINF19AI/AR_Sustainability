@@ -22,6 +22,7 @@ public class MainMode : MonoBehaviour
         UIController.ShowUI("main");
         ImageTarget.SetActive(true);
         gridSpawner.GetComponent<CupGrid>().SetCupAmount(currentAmount);
+        UAP_AccessibilityManager.SetLanguage("English");
 
     }
 

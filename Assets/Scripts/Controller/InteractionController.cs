@@ -29,7 +29,7 @@ public class InteractionController : Singleton<InteractionController>
         {
             mode.SetActive(false);
         }
-    }   
+    }
 
     /// <summary>
     /// other scripts can call InteractionController.EnableMode(modename);
@@ -47,7 +47,7 @@ public class InteractionController : Singleton<InteractionController>
         if (interactionModes.TryGetValue(name, out modeObject))
         {
             // coroutine is used to allow current mode extra frame to be disabled before activating new one
-            StartCoroutine(ChangeMode(modeObject)); 
+            StartCoroutine(ChangeMode(modeObject));
         }
         else
         {
@@ -55,11 +55,13 @@ public class InteractionController : Singleton<InteractionController>
         }
     }
 
-    public static GlobalStateDictionary GetGlobalState() {
+    public static GlobalStateDictionary GetGlobalState()
+    {
         return Instance?._GetGlobalStateDictionary();
     }
 
-    GlobalStateDictionary _GetGlobalStateDictionary() {
+    GlobalStateDictionary _GetGlobalStateDictionary()
+    {
         return globalState;
     }
 

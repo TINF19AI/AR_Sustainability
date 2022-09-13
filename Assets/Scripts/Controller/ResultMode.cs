@@ -25,16 +25,4 @@ public class ResultMode : MonoBehaviour
         gridSpawner.GetComponent<CupGrid>().SetCupAmount(1);
         InteractionController.EnableMode("end");
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

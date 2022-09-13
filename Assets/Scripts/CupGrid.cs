@@ -66,9 +66,6 @@ public class CupGrid : MonoBehaviour
 		yield return null;
 	}
 
-	void Update(){
-	}
-
 	void Instantiate(int x, int y, int z, GameObject placeObject){
 		GameObject cup = Instantiate(placeObject, new Vector3(x * cupSize.x, y * cupSize.y, z * cupSize.z), Quaternion.identity, gameObject.transform);
 		cup.gameObject.name = "cup_" + x + "_" + y + "_" + z;

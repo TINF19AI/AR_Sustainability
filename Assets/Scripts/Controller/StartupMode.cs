@@ -11,7 +11,6 @@ public class StartupMode : MonoBehaviour
 
     void OnEnable()
     {
-        //UIController.SetHelpButtonVisible(false, false);
         UIController.ShowUI("startup");
         ImageTarget.SetActive(false);
         UAP_AccessibilityManager.SetLanguage("English");
@@ -20,11 +19,5 @@ public class StartupMode : MonoBehaviour
     public void ContinueApplication()
     {
         InteractionController.EnableMode("scan");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

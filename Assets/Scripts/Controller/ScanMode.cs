@@ -15,13 +15,6 @@ public class ScanMode : MonoBehaviour
         imageTargetEventHandler = ImageTarget.GetComponent<DefaultObserverEventHandler>();
         imageTargetEventHandler.OnTargetFound.AddListener(ImageFound);
         ImageTarget.SetActive(true);
-        //UIController.SetHelpButtonVisible(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ImageFound()

@@ -18,7 +18,7 @@ public class TTS_Test : MonoBehaviour
 
     void OnEnable()
     {
-        UAP_AccessibilityManager.SetLanguage("German");
+        UAP_AccessibilityManager.SetLanguage("English");
         Debug.Log("OnEnable Called");
     }
 

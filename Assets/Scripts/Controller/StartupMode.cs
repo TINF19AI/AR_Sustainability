@@ -14,6 +14,7 @@ public class StartupMode : MonoBehaviour
         //UIController.SetHelpButtonVisible(false, false);
         UIController.ShowUI("startup");
         ImageTarget.SetActive(false);
+        UAP_AccessibilityManager.SetLanguage("English");
     }
 
     public void ContinueApplication()

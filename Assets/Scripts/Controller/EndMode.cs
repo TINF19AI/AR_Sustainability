@@ -9,6 +9,7 @@ public class EndMode : MonoBehaviour
     {
         UIController.ShowUI("end");
         ImageTarget.SetActive(false);
+        UAP_AccessibilityManager.SetLanguage("English");
     }
 
     public void OpenLink()

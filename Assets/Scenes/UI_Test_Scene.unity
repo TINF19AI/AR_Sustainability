@@ -134,13 +134,14 @@ GameObject:
   - component: {fileID: 18092033}
   - component: {fileID: 18092035}
   - component: {fileID: 18092034}
+  - component: {fileID: 18092036}
   m_Layer: 5
   m_Name: Result UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &18092033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -183,6 +184,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18092032}
   m_CullTransparentMesh: 1
+--- !u!114 &18092036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18092032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b8ed8a1982c3745b6fb7dd1a6cce2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PopUp: 0
+  m_AllowExternalJoining: 0
+  m_AutoRead: 0
+  m_Priority: 0
+  m_ContainerName: 
+  m_IsLocalizationKey: 0
+  m_2DNavigation: 0
+  m_ConstrainToContainerUp: 0
+  m_ConstrainToContainerDown: 0
+  m_ConstrainToContainerLeft: 0
+  m_ConstrainToContainerRight: 0
+  m_AllowTouchExplore: 1
+  m_DoubleCheckUIElementsPositions: 1
 --- !u!1001 &62679972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -693,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &231940703
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1213,7 +1239,7 @@ MonoBehaviour:
   m_SecondaryOrder: 0
   m_Pos: {x: 0, y: 0}
   m_TextAsAudio: {fileID: 0}
-  m_Prefix: 
+  m_Prefix: '{0} {1}'
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
@@ -3709,14 +3735,14 @@ MonoBehaviour:
   m_SecondaryOrder: 0
   m_Pos: {x: 0, y: 0}
   m_TextAsAudio: {fileID: 0}
-  m_Prefix: 
+  m_Prefix: '{0} {1}'
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
   m_Text: 'You guessed: '
   m_NameLabel: {fileID: 1068283480}
   m_AdditionalNameLabels:
-  - {fileID: 325726356}
+  - {fileID: 407663430}
   m_TestList: []
   m_IsLocalizationKey: 0
   m_TryToReadLabel: 1

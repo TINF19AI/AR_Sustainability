@@ -2415,8 +2415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe4a43c9c74ed9043953509ea6647b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cupObject: {fileID: 5493992043758017214, guid: 80ad8d596cae49a4a93dbe19e9e24891, type: 3}
-  cupHighlightedObject: {fileID: 5493992043758017214, guid: 8c19021fdf1394440b37797f2a1dd8e3, type: 3}
+  cupObject: {fileID: 3545012184732722522, guid: 409dd25d7856ce841a8a8caebfffdcf4, type: 3}
+  cupHighlightedObject: {fileID: 8729487032889981425, guid: 19db899d2dbd8624584a6c4a990a8efb, type: 3}
   cupSize: {x: 0, y: 0, z: 0}
   gridX: 25
   gridZ: 25

@@ -6,6 +6,7 @@ public class CupGrid : MonoBehaviour
 {
 	public GameObject cupObject;
 	public GameObject cupHighlightedObject;
+	public GameObject arCamera;
 
 	public Vector3 cupSize = new Vector3();
 	private int amountPlacedGlobal = 0;
@@ -26,6 +27,11 @@ public class CupGrid : MonoBehaviour
 
 	void Start(){
 		SetCupAmount(0);
+	}
+
+	void Update(){
+		transform.LookAt(arCamera.transform);
+		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + 180, 0);
 	}
 
 	IEnumerator Spawn(int amount, int amountPlaced, bool defaultPrefab)
@@ -67,12 +73,16 @@ public class CupGrid : MonoBehaviour
 	}
 
 	void Instantiate(int x, int y, int z, GameObject placeObject){
-		GameObject cup = Instantiate(placeObject, new Vector3(x * cupSize.x, y * cupSize.y, z * cupSize.z), Quaternion.identity, gameObject.transform);
+		GameObject cup = Instantiate(placeObject, new Vector3(), Quaternion.identity, gameObject.transform);
+		cup.transform.localPosition = new Vector3(x * cupSize.x / transform.localScale.x, y * cupSize.y / transform.localScale.y, z * cupSize.z / transform.localScale.z);
 		cup.gameObject.name = "cup_" + x + "_" + y + "_" + z;
 		cups.Add(cup);
 	}
 
 	public void SetCupAmount(int amountToPlace, bool defaultPrefab = true){
+		//if(arCamera.transform.eulerAngles.y > 90 && arCamera.transform.eulerAngles.y < 180 )
+
+
 		StartCoroutine(Spawn(amountToPlace, amountPlacedGlobal, defaultPrefab));
 	}
 

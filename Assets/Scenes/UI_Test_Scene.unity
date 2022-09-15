@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2417,6 +2417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cupObject: {fileID: 3545012184732722522, guid: 409dd25d7856ce841a8a8caebfffdcf4, type: 3}
   cupHighlightedObject: {fileID: 8729487032889981425, guid: 19db899d2dbd8624584a6c4a990a8efb, type: 3}
+  arCamera: {fileID: 223974226}
   cupSize: {x: 0, y: 0, z: 0}
   gridX: 25
   gridZ: 25
@@ -5556,6 +5557,10 @@ PrefabInstance:
     - target: {fileID: 123566, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_Name
       value: Accessibility Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 22474968, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.500061
       objectReference: {fileID: 0}
     - target: {fileID: 4973883477652662, guid: 89f4a0ae7ea3fa84ea56c91291d7bd87, type: 3}
       propertyPath: m_RootOrder

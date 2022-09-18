@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &18092033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3074,7 +3074,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8187061742616000473, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
       propertyPath: m_Text
-      value: Back To Menu
+      value: Want to see the visualization again?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187061742616000473, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187061742616000474, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187061742616000474, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187061742616000474, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8187061742616000474, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8187061743929291762, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3118,11 +3138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8187061743929291763, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 400
+      value: 550
       objectReference: {fileID: 0}
     - target: {fileID: 8187061743929291763, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 8187061743929291763, guid: 4eca5e4c71d864948bb2b4f2714b9d36, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3220,7 +3240,7 @@ MonoBehaviour:
   m_PrefixIsLocalizationKey: 0
   m_PrefixIsPostFix: 0
   m_FilterText: 1
-  m_Text: Back To Menu
+  m_Text: Want to see the visualization again?
   m_NameLabel: {fileID: 1524975625}
   m_AdditionalNameLabels: []
   m_TestList: []
@@ -3332,7 +3352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &927120373
 Transform:
   m_ObjectHideFlags: 0

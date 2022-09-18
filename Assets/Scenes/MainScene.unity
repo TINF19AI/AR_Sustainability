@@ -2399,9 +2399,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1208865235}
   m_Father: {fileID: 782628379}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &704592445
 MonoBehaviour:
@@ -2419,8 +2420,6 @@ MonoBehaviour:
   cupHighlightedObject: {fileID: 8729487032889981425, guid: 19db899d2dbd8624584a6c4a990a8efb, type: 3}
   arCamera: {fileID: 223974226}
   cupSize: {x: 0, y: 0, z: 0}
-  gridX: 25
-  gridZ: 25
   numberOfCupsToKeepActiveFromTop: 625
   dontInstantiateAtCups: 7500
   useLayerAtHeight: 2
@@ -2713,7 +2712,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1208865235}
   - {fileID: 704592444}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -4252,17 +4250,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208865234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0002, y: 0.0002, z: 0.0002}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1456151581}
-  m_Father: {fileID: 782628379}
+  m_Father: {fileID: 704592444}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -5, y: 3}
+  m_AnchoredPosition: {x: -0.20000029, y: 0.120000124}
   m_SizeDelta: {x: 1200, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208865236

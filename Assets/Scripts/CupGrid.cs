@@ -32,7 +32,7 @@ public class CupGrid : MonoBehaviour
 
 	void Update(){
 		transform.LookAt(arCamera.transform);
-		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + 180, 0);
+		transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y + 135, 0);
 	}
 
 	IEnumerator Spawn(int amount, int amountPlaced, bool defaultPrefab)

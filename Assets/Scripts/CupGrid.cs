@@ -11,8 +11,9 @@ public class CupGrid : MonoBehaviour
 	public Vector3 cupSize = new Vector3();
 	private int amountPlacedGlobal = 0;
 
-	public int gridX = 25;
-	public int gridZ = 25;
+	public const int gridX = 25;
+	public const int gridZ = 25;
+	private const int gridSize = (gridX * gridZ);
 
 	public int numberOfCupsToKeepActiveFromTop = 625;
 	public int dontInstantiateAtCups = 7500;
@@ -47,22 +48,27 @@ public class CupGrid : MonoBehaviour
 		if(amount < amountPlaced){
 			// remove
 			for(int i = amountPlaced; i > amount; i--){
-				Destroy(cups[i-1]);
-				cups.RemoveAt(i-1);
+				if(cups[i-1] != null){
+					Destroy(cups[i-1]);
+				}else{
+					cups[(i - 1) % gridSize].transform.localPosition = getLocalPosition((i - 1) - gridSize );
+				}
 
-				ShowCupIfNotUseless(i);
+				cups.RemoveAt(i-1);
+				// ShowCupIfNotUseless(i);
 			}
 
 		// Place more cups
 		}else{
+
 			// add
 			for (int i = amountPlaced; i < amount; i++){
-
-				if(i > dontInstantiateAtCups && !IsAtEdge(getPosition(i))){
+				if(i > (gridX * gridZ) && !IsAtEdge(getPosition(i))){
+					cups[i % gridSize].transform.localPosition = getLocalPosition(i);
 					cups.Add(null);
 				}else{
-					Instantiate(getX(i), getY(i), getZ(i), defaultPrefab ? cupObject : cupHighlightedObject );
-					HideCupIfUseless(i);
+					Instantiate(i, defaultPrefab ? cupObject : cupHighlightedObject );
+					// HideCupIfUseless(i);
 				}
 
 			}
@@ -72,17 +78,15 @@ public class CupGrid : MonoBehaviour
 		yield return null;
 	}
 
-	void Instantiate(int x, int y, int z, GameObject placeObject){
+	void Instantiate(int positionIndex, GameObject placeObject){
 		GameObject cup = Instantiate(placeObject, new Vector3(), Quaternion.identity, gameObject.transform);
-		cup.transform.localPosition = new Vector3(x * cupSize.x / transform.localScale.x, y * cupSize.y / transform.localScale.y, z * cupSize.z / transform.localScale.z);
-		cup.gameObject.name = "cup_" + x + "_" + y + "_" + z;
+		cup.transform.localPosition = getLocalPosition(positionIndex);
+		Vector3 position = getPosition(positionIndex);
+		cup.gameObject.name = "cup_" + position.x + "_" + position.y + "_" + position.z;
 		cups.Add(cup);
 	}
 
 	public void SetCupAmount(int amountToPlace, bool defaultPrefab = true){
-		//if(arCamera.transform.eulerAngles.y > 90 && arCamera.transform.eulerAngles.y < 180 )
-
-
 		StartCoroutine(Spawn(amountToPlace, amountPlacedGlobal, defaultPrefab));
 	}
 
@@ -104,21 +108,21 @@ public class CupGrid : MonoBehaviour
 		yield return null;
 	}
 
-	private void HideCupIfUseless(int i){
-		if(i - numberOfCupsToKeepActiveFromTop >= 0 && cups[i - numberOfCupsToKeepActiveFromTop] != null){
-			if(IsAtEdge(getPosition(i))){
-				return;
-			}
+	// private void HideCupIfUseless(int i){
+	// 	if(i - numberOfCupsToKeepActiveFromTop >= 0 && cups[i - numberOfCupsToKeepActiveFromTop] != null){
+	// 		if(IsAtEdge(getPosition(i))){
+	// 			return;
+	// 		}
 
-			cups[i - numberOfCupsToKeepActiveFromTop].gameObject.SetActive(false);
-		}
-	}
+	// 		cups[i - numberOfCupsToKeepActiveFromTop].gameObject.SetActive(false);
+	// 	}
+	// }
 
-	private void ShowCupIfNotUseless(int i){
-		if(i - numberOfCupsToKeepActiveFromTop >= 0 && cups[i - numberOfCupsToKeepActiveFromTop] != null){
-			cups[i - numberOfCupsToKeepActiveFromTop].gameObject.SetActive(true);
-		}
-	}
+	// private void ShowCupIfNotUseless(int i){
+	// 	if(i - numberOfCupsToKeepActiveFromTop >= 0 && cups[i - numberOfCupsToKeepActiveFromTop] != null){
+	// 		cups[i - numberOfCupsToKeepActiveFromTop].gameObject.SetActive(true);
+	// 	}
+	// }
 
 	private int getX(int i){
 		return i % gridX;
@@ -134,6 +138,15 @@ public class CupGrid : MonoBehaviour
 
 	private Vector3 getPosition(int i){
 		return new Vector3(getX(i), getY(i), getZ(i));
+	}
+
+	private Vector3 getLocalPosition(int i){
+		Vector3 position = getPosition(i);
+		return new Vector3(
+			position.x * cupSize.x / transform.localScale.x,
+			position.y * cupSize.y / transform.localScale.y,
+			position.z * cupSize.z / transform.localScale.z
+		);
 	}
 
 

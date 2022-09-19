@@ -4679,7 +4679,7 @@ PrefabInstance:
       value: '<size=75>Results</size>
 
 
-        The blue cups represent the difference
+        The red cups represent the difference
         between your estimated amount and the actual single-use cup usage at the
         Studierendenwerk Ulm.'
       objectReference: {fileID: 0}

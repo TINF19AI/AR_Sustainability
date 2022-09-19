@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6722,7 +6722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!225 &1749171067
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7510,7 +7510,12 @@ PrefabInstance:
 
         Try to guess how many
         single-use cups are used each year at Studiendenwerk Ulm (around 28,000 students
-        at DHBW Heidenheim, Ulm University, ...)'
+        at DHBW Heidenheim, Ulm University, ...)
+
+
+        You can specify the amount
+        by using the slider at the bottom of the screen. The cups are shown on top
+        of the Image Target.'
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420236904584, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_Alpha
@@ -7542,7 +7547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 600
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 2873754420401135650, guid: a43bcb247ad5fa746ace7fd66f7d4bca, type: 3}
       propertyPath: m_LocalScale.x
